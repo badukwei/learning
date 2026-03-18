@@ -1,6 +1,6 @@
 # 求職進度追蹤
 
-更新：2026-03-17 ｜ Month 1, Week 1, Day 1
+更新：2026-03-18 ｜ Month 1, Week 1, Day 1
 
 ---
 
@@ -18,13 +18,16 @@
 - [ ] 建第 1 個 AI 工具 prototype（建議：JD 分析工具）
 - [ ] 開職缺追蹤表，看 3-5 個職缺並記錄
 - [ ] 列 3 個目標 open source repo
-- [ ] 讀 1 篇技術文章並留 3 行筆記
+- [x] 讀 1 篇技術文章並留 3 行筆記
 
 ---
 
 ## 已完成
 
-（空）
+### Day 1（2026-03-18）
+- Anthropic Claude Code 課程學習
+  - Context 管理：CLAUDE.md 三層結構、`@`、`#`、`/compact`、`/clear`
+  - Making Changes：Planning Mode（Shift+Tab×2）、Thinking Mode（think/ultrathink）、截圖溝通
 
 ---
 
