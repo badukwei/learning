@@ -4,15 +4,13 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Purpose
 
-This is a personal learning journal repository. Each `day-N/` directory contains notes and experiments from a learning session.
+個人轉職學習記錄 repo。搭配 `/career-coach` skill 使用。
 
 ## Structure
 
-- `day-N/NOTE.md` — daily learning notes (Markdown)
-- Additional files (code, configs) may be added inside each day's directory as the learning progresses
+- `day-N/` — 每天的學習筆記
+- `PROGRESS.md` — 求職進度與任務追蹤
 
-## Conventions
+## career-coach 使用規則
 
-- Each day's directory is self-contained
-- Notes are written in Markdown
-- No build system or test runner — this is a notes/experiments repo
+規劃進度、指派任務時，只需讀取 `PROGRESS.md`，不需要讀 `day-N/` 的內容。
