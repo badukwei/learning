@@ -1,6 +1,6 @@
 # 求職進度追蹤
 
-更新：2026-03-18 ｜ Month 1, Week 1, Day 1
+更新：2026-03-19 ｜ Month 1, Week 1, Day 2
 
 ---
 
@@ -23,6 +23,12 @@
 ---
 
 ## 已完成
+
+### Day 2（2026-03-19）
+- Anthropic Claude Code 課程學習
+  - Custom Commands：`.claude/commands/` 結構、`$ARGUMENTS` 參數、實用範例（/check、/write_tests、/review、/commit）
+  - MCP Servers：MCP 概念與三種 scope（local/project/user）、Playwright 瀏覽器控制、Notion 整合
+  - GitHub Integration：`/install-github-app`、`@claude` mention action、自動 PR review、Workflow 客製化（加入 MCP + allowed_tools）
 
 ### Day 1（2026-03-18）
 - Anthropic Claude Code 課程學習
