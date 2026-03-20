@@ -1,6 +1,6 @@
 # 求職進度追蹤
 
-更新：2026-03-19 ｜ Month 1, Week 1, Day 2
+更新：2026-03-20 ｜ Month 1, Week 1, Day 3
 
 ---
 
@@ -23,6 +23,13 @@
 ---
 
 ## 已完成
+
+### Day 3（2026-03-20）
+- Claude Code Hooks 學習
+  - PreToolUse / PostToolUse 機制與差異（PreToolUse 可阻擋，PostToolUse 不行）
+  - 設定位置：global / project shared / project local
+  - 實作：TypeScript 型別檢查 Hook、.env 保護 Hook、自動格式化 Hook
+  - `/hooks` 指令（互動式設定，不需手寫 JSON）
 
 ### Day 2（2026-03-19）
 - Anthropic Claude Code 課程學習
