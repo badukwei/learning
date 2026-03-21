@@ -1,6 +1,6 @@
 # 求職進度追蹤
 
-更新：2026-03-20 ｜ Month 1, Week 1, Day 3
+更新：2026-03-21 ｜ Month 1, Week 1, Day 4
 
 ---
 
@@ -23,6 +23,15 @@
 ---
 
 ## 已完成
+
+### Day 4（2026-03-21）
+- Claude Code Hooks 深度實作
+  - 完整實作 .env 保護 Hook（PreToolUse + exit 2 阻擋機制）
+  - 團隊共用方案：`settings.example.json`（$PWD 佔位）+ `init-claude.js` setup 腳本
+  - 其他 Hook 類型：`Notification`、`Stop`、`SubagentStop`、`PreCompact`、`UserPromptSubmit`、`SessionStart`、`SessionEnd`
+  - 進階：Hook + MCP 組合（寫 UI 前自動抓 Figma 設計稿）
+  - Debug 技巧：用 `jq . > log.json` 記錄 stdin 格式
+  - 不同 Hook 的 stdin JSON 格式差異
 
 ### Day 3（2026-03-20）
 - Claude Code Hooks 學習
