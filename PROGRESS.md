@@ -1,28 +1,51 @@
 # 求職進度追蹤
 
-更新：2026-03-21 ｜ Month 1, Week 1, Day 4
+更新：2026-03-22 ｜ Month 1, Week 2, Day 5
 
 ---
 
 ## 本月目標（Month 1）
 
 - [ ] 2 個 AI 工具上線並在使用中
-- [ ] 瀏覽 20+ 個職缺，了解市場
+- [ ] 瀏覽 20+ 個職缺，了解市場需求
 - [ ] GitHub profile 整理完
 - [ ] 履歷草稿完成
+- [ ] 確定 side project 方向並開始動工
 
 ---
 
-## 本週任務（Week 1）
+## 本週任務（Week 2）
 
-- [ ] 建第 1 個 AI 工具 prototype（建議：JD 分析工具）
-- [ ] 開職缺追蹤表，看 3-5 個職缺並記錄
-- [ ] 列 3 個目標 open source repo
-- [x] 讀 1 篇技術文章並留 3 行筆記
+- [ ] 看 5-10 個職缺，記錄技術需求與薪資範圍
+- [ ] 根據職缺需求規劃 side project 方向（1 個具體題目）
+- [ ] 列 3 個目標 open source repo，找可貢獻的 issue
+- [ ] 評估哪些日常任務可以用 AI 自動化（列清單）
+- [ ] 開始第 1 個 AI 應用 side project（能對應職缺需求的）
+
+---
+
+## Week 1 回顧（2026-03-18 ~ 2026-03-22）
+
+Week 1 只有 3 天工作天，主力放在學習打底。
+
+### ✅ 完成
+- Claude Code 完整課程（Day 1-5）：Context 管理、Custom Commands、MCP、GitHub Actions、Hooks 深度實作
+
+### ⏭ 順延到 Week 2
+- 職缺調查、side project 規劃、open source 目標 repo
 
 ---
 
 ## 已完成
+
+### Day 5（2026-03-22）
+- Claude Agent SDK 學習（原名 Claude Code SDK）
+  - 三種使用方式：TypeScript SDK、Python SDK、CLI（`claude -p`）
+  - async iterator 輸出格式，篩 `message.type === "result"` 取最終結果
+  - 權限設定：預設 read-only，需明確開放 `allowedTools`
+  - `settingSources`：載入 CLAUDE.md 和 `.claude/` 設定（預設不載入）
+  - System Prompt 注入：給 SDK 執行的 Claude 設定角色
+  - 實際應用：Hook 裡啟動第二個 Claude 做 code review、git pre-commit 自動 review、CI/CD 自動修復測試、定期 code quality 檢查
 
 ### Day 4（2026-03-21）
 - Claude Code Hooks 深度實作
@@ -31,7 +54,6 @@
   - 其他 Hook 類型：`Notification`、`Stop`、`SubagentStop`、`PreCompact`、`UserPromptSubmit`、`SessionStart`、`SessionEnd`
   - 進階：Hook + MCP 組合（寫 UI 前自動抓 Figma 設計稿）
   - Debug 技巧：用 `jq . > log.json` 記錄 stdin 格式
-  - 不同 Hook 的 stdin JSON 格式差異
 
 ### Day 3（2026-03-20）
 - Claude Code Hooks 學習
@@ -79,5 +101,7 @@
 
 ## 筆記 / 方向調整
 
-- Month 1-2 以學習為主，Month 3 才正式投遞
-- 每天 4 小時，學習 1.5h + AI 工具 1.5h + GitHub 0.5h + 市場觀察 0.5h
+- Week 1（只有 3 天）以學習打底為主，Week 2 起開始往實作和求職調查走
+- AI 學習方向：應用到實際 side project，不再純讀課程
+- Month 1-2 以學習 + side project 為主，Month 3 才正式投遞
+- 每天 4 小時：學習/實作 1.5h + AI side project 1.5h + 職缺/貢獻調查 0.5h + 市場觀察 0.5h
