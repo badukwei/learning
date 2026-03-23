@@ -1,6 +1,6 @@
 # 求職進度追蹤
 
-更新：2026-03-22 ｜ Month 1, Week 2, Day 5
+更新：2026-03-23 ｜ Month 1, Week 2, Day 6
 
 ---
 
@@ -16,7 +16,8 @@
 
 ## 本週任務（Week 2）
 
-- [ ] 看 5-10 個職缺，記錄技術需求與薪資範圍
+- [x] 看職缺、深度分析 5 個最適合職缺，記錄技術需求與薪資範圍 → day-6/job-search.md
+- [x] 初步整理學習方向（持續更新，不是定論）→ day-6/learning-strategy.md
 - [ ] 根據職缺需求規劃 side project 方向（1 個具體題目）
 - [ ] 列 3 個目標 open source repo，找可貢獻的 issue
 - [ ] 評估哪些日常任務可以用 AI 自動化（列清單）
@@ -37,6 +38,10 @@ Week 1 只有 3 天工作天，主力放在學習打底。
 ---
 
 ## 已完成
+
+### Day 6（2026-03-23）
+- 職缺深度分析：第一輪職缺調查，挑 5 個做深度拆解（技術缺口、面試難點、貢獻入場策略）→ day-6/job-search.md
+- 初步學習方向整理：根據第一輪觀察，記錄初步技術方向，持續職缺調查後會調整 → day-6/learning-strategy.md
 
 ### Day 5（2026-03-22）
 - Claude Agent SDK 學習（原名 Claude Code SDK）
@@ -87,7 +92,11 @@ Week 1 只有 3 天工作天，主力放在學習打底。
 
 | 公司 | 職位 | 薪資 | 符合度 | 狀態 |
 |------|------|------|--------|------|
-| （空） | — | — | — | — |
+| Veda | Move (Sui) Smart Contract Engineer | 未標示 | ⭐⭐⭐⭐⭐ | 觀察中（先貢獻）|
+| LI.FI | Senior Frontend Engineer (Perps) | €80K–€120K | ⭐⭐⭐⭐⭐ | 觀察中（⚠️ EMEA/LATAM 限制）|
+| Sui Foundation | Senior DevRel Engineer, Walrus (APAC) | 未標示 | ⭐⭐⭐⭐ | 觀察中（Month 3 投遞）|
+| Blockchain.com | Frontend Engineer (React) | $89K–$109K | ⭐⭐⭐⭐ | 觀察中 |
+| MLabs | Move (Sui) Engineer | 未標示 | ⭐⭐⭐⭐ | 觀察中（⚠️ EST overlap）|
 
 ---
 
@@ -95,7 +104,34 @@ Week 1 只有 3 天工作天，主力放在學習打底。
 
 | Repo | 類型 | 狀態 |
 |------|------|------|
-| （空） | — | — |
+| `MystenLabs/walrus` | 文件 / SDK 範例 | 待找 issue |
+| `MystenLabs/sui` examples | 範例 / 文件 | 待找 issue |
+| `scallop-io/sui-scallop-sdk` | 文件 / test | 待評估 |
+
+---
+
+## 學習方向（持續更新，每週職缺調查後補充）
+
+> 這裡只記錄「目前已觀察到的方向」，不是定論。每天看職缺，每週末彙整一次。
+
+### 目前觀察到的技術需求（Week 2，第一輪）
+
+| 技術 | 在職缺中出現頻率 | 備註 |
+|------|----------------|------|
+| Sui / Move | 高（Web3 職缺標配） | 已有實務 |
+| React / TypeScript | 高（通用） | 已有實務 |
+| viem / wagmi | 中（EVM frontend 職缺）| 缺口，待確認是否普遍 |
+| Walrus Protocol | 低（特定 DevRel 職缺）| 值得觀察 |
+| WebSocket / 即時資料 | 中（DEX 類職缺）| 待更多樣本確認 |
+
+_樣本數：5 個職缺（2026-03-23）。持續調查後更新。_
+
+### 貢獻目標 Repo（初步，待更多職缺確認）
+
+| Repo | 方向 | 狀態 |
+|------|------|------|
+| `MystenLabs/walrus` | 文件 / SDK 範例 | 待找 issue |
+| `MystenLabs/sui` examples | 文件 / 範例 | 待找 issue |
 
 ---
 
@@ -105,3 +141,4 @@ Week 1 只有 3 天工作天，主力放在學習打底。
 - AI 學習方向：應用到實際 side project，不再純讀課程
 - Month 1-2 以學習 + side project 為主，Month 3 才正式投遞
 - 每天 4 小時：學習/實作 1.5h + AI side project 1.5h + 職缺/貢獻調查 0.5h + 市場觀察 0.5h
+- 2026-03-23：第一輪職缺調查，初步觀察到 DevRel / Fullstack / 合約工程師三個方向，詳見 day-6/learning-strategy.md。持續調查中，方向未定論。
