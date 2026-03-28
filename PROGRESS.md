@@ -1,27 +1,29 @@
 # 求職進度追蹤
 
-更新：2026-03-23 ｜ Month 1, Week 2, Day 6
+更新：2026-03-25 ｜ Month 1, Week 2, Day 8
 
 ---
 
-## 本月目標（Month 1）
+## 本月目標（Month 1）— 驗證方向
 
-- [ ] 2 個 AI 工具上線並在使用中
-- [ ] 瀏覽 20+ 個職缺，了解市場需求
-- [ ] GitHub profile 整理完
-- [ ] 履歷草稿完成
-- [ ] 確定 side project 方向並開始動工
+Month 1 只做一件事：**搞清楚自己想走哪條路**。
+
+- [ ] 試寫 Move / DeFi code（自己選題目，感受有沒有動力）
+- [ ] 試寫 1 篇技術筆記或文件貢獻（感受 DevRel 性質的工作）
+- [ ] 試在 Sui 社群回答 1-2 個問題（感受社群互動）
+- [ ] 月底回顧：工程師 vs DevRel vs 混合，選一條主線
+
+> 不投遞、不建 portfolio、不追新技術。只驗證。
 
 ---
 
-## 本週任務（Week 2）
+## 本週任務（Week 2，剩餘）
 
-- [x] 看職缺、深度分析 5 個最適合職缺，記錄技術需求與薪資範圍 → day-6/job-search.md
-- [x] 初步整理學習方向（持續更新，不是定論）→ day-6/learning-strategy.md
-- [ ] 根據職缺需求規劃 side project 方向（1 個具體題目）
-- [ ] 列 3 個目標 open source repo，找可貢獻的 issue
-- [ ] 評估哪些日常任務可以用 AI 自動化（列清單）
-- [ ] 開始第 1 個 AI 應用 side project（能對應職缺需求的）
+- [x] 看職缺、深度分析 5 個最適合職缺 → day-6/job-search.md
+- [x] 初步整理學習方向 → day-6/learning-strategy.md
+- [x] DevRel 職缺深度分析（5 個）→ day-7/job-search.md
+- [x] DevRel 入行指南整理 → day-7/devrel-guide.md
+- [ ] 找一個 Move / DeFi 的小題目，開始寫（不需要完成，感受就好）
 
 ---
 
@@ -38,6 +40,12 @@ Week 1 只有 3 天工作天，主力放在學習打底。
 ---
 
 ## 已完成
+
+### Day 7（2026-03-24）
+- DevRel / Technical Writer 方向職缺調查：第二輪，聚焦 DevRel 職缺（Tether P2P、Tether AI、Sui Foundation Walrus、Crossmint、Mysten Labs）→ day-7/job-search.md
+- 學習策略更新：Tether P2P 可立刻投遞，最大缺口是「公開內容 portfolio」而非技術 → day-7/learning-strategy.md
+- 結論：DevRel 方向 Sui 候選人稀缺性更強，建議工程師 + DevRel 雙線並行
+- DevRel 入行指南整理：7 篇業界經驗文章，含工作內容拆解、一天工作樣貌、30 天行動計畫 → day-7/devrel-guide.md
 
 ### Day 6（2026-03-23）
 - 職缺深度分析：第一輪職缺調查，挑 5 個做深度拆解（技術缺口、面試難點、貢獻入場策略）→ day-6/job-search.md
@@ -97,6 +105,10 @@ Week 1 只有 3 天工作天，主力放在學習打底。
 | Sui Foundation | Senior DevRel Engineer, Walrus (APAC) | 未標示 | ⭐⭐⭐⭐ | 觀察中（Month 3 投遞）|
 | Blockchain.com | Frontend Engineer (React) | $89K–$109K | ⭐⭐⭐⭐ | 觀察中 |
 | MLabs | Move (Sui) Engineer | 未標示 | ⭐⭐⭐⭐ | 觀察中（⚠️ EST overlap）|
+| Tether | Developer Relations P2P (100% remote) | $126K–$138K | ⭐⭐⭐⭐⭐ | 觀察中（短期投遞）|
+| Tether | Developer Relations AI / QVAC (100% remote) | $115K–$117K | ⭐⭐⭐⭐ | 觀察中（補 Llama.cpp 後投遞）|
+| Mysten Labs | Senior Developer Relations Engineer | 未標示 | ⭐⭐⭐⭐ | 觀察中（Month 3，先貢獻）|
+| Crossmint | Senior Developer Relations Engineer | $140K–$175K | ⭐⭐⭐ | 觀察中（⚠️ US hybrid 限制）|
 
 ---
 
@@ -137,8 +149,8 @@ _樣本數：5 個職缺（2026-03-23）。持續調查後更新。_
 
 ## 筆記 / 方向調整
 
-- Week 1（只有 3 天）以學習打底為主，Week 2 起開始往實作和求職調查走
-- AI 學習方向：應用到實際 side project，不再純讀課程
-- Month 1-2 以學習 + side project 為主，Month 3 才正式投遞
-- 每天 4 小時：學習/實作 1.5h + AI side project 1.5h + 職缺/貢獻調查 0.5h + 市場觀察 0.5h
-- 2026-03-23：第一輪職缺調查，初步觀察到 DevRel / Fullstack / 合約工程師三個方向，詳見 day-6/learning-strategy.md。持續調查中，方向未定論。
+- Week 1（只有 3 天）以學習打底為主
+- Week 2：職缺調查，初步觀察到 DevRel / 合約工程師兩個方向，方向仍在驗證中
+- 2026-03-25：調整計畫。Month 1 以驗證方向為主，不投遞不衝數字。每天 1h，有休息日，慢慢來。
+- 傾向方向：Sui/Move 合約工程師（DeFi）為主，DevRel 為探索。月底再決定。
+- 能量狀況：低能量，工作不忙但下班後能量有限。計畫設計要有彈性、有休息空間。
