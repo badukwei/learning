@@ -1,19 +1,72 @@
 # 求職進度追蹤
 
-更新：2026-03-25 ｜ Month 1, Week 2, Day 8
+更新：2026-03-28 ｜ Month 1, Week 2, Day 11
 
 ---
 
-## 本月目標（Month 1）— 驗證方向
+## 求職方向
 
-Month 1 只做一件事：**搞清楚自己想走哪條路**。
+目標：全遠端海外工作，年薪 $70k+（底線 $50k）
 
-- [ ] 試寫 Move / DeFi code（自己選題目，感受有沒有動力）
-- [ ] 試寫 1 篇技術筆記或文件貢獻（感受 DevRel 性質的工作）
-- [ ] 試在 Sui 社群回答 1-2 個問題（感受社群互動）
-- [ ] 月底回顧：工程師 vs DevRel vs 混合，選一條主線
+### 目標公司類型
+- **A）Web3 / DeFi 新創**（現有背景直接適用）
+- **B）一般科技新創**：SaaS、開發工具、AI 產品（技術棧通用）
+- 不限 Web3，持續看市場調整
 
-> 不投遞、不建 portfolio、不追新技術。只驗證。
+### 目標職位（優先順序）
+1. Web3 / DeFi Engineer（Sui/Move 稀缺性強）
+2. Fullstack / Frontend Engineer（通用）
+3. DevRel / Developer Advocate（技術 + 社群混合）
+
+---
+
+## 未來幾週節奏（Month 1 尾 → Month 2 初）
+
+| 週次 | 重點 |
+|------|------|
+| Week 2 尾（本週）| 規劃完成 |
+| Week 3（Day 12–14）| 景點清單網站 MVP |
+| Week 4（Day 15+）| AI Issue Finder |
+| Month 2 | OSS 貢獻為主 + 開始投履歷，目標拿到面試邀約 |
+| Month 2 面試邀約後 | 根據面試形式決定是否補刷題 / 系統設計 |
+
+---
+
+## 每日優先級（4h 上限）
+
+| 優先 | 內容 | 時間 |
+|------|------|------|
+| 🥇 | Side project（主力）| 1.5h |
+| 🥇 | OSS 貢獻（選 1 repo 持續推）| 1h |
+| 🥈 | 職缺觀察 + 履歷整理 | 30min |
+| 🥉 | 系統設計（邊做 side project 邊學，不另排）| — |
+| ⏳ | 刷題（Month 3 再說，看面試要求）| — |
+| ⏳ | 上課（有明確缺口再補，不先排）| — |
+| 🔋 | 彈性 / 休息 | 1h |
+
+> 系統設計不另外排時間：在 side project 的每個架構決策中練習，做完記下來，面試直接用。
+
+---
+
+## Side Projects
+
+### 1. 景點清單共享網站（Day 12 開始）
+朋友需求：Google Maps 沒有分享清單功能。任何人可建立主題清單、新增 / 刪除景點，不需登入。
+→ 詳細計畫：`day-11/project-plan-spots.md`
+
+**Tech stack：** Next.js + Tailwind + Supabase + Vercel
+
+| Day | 目標 |
+|-----|------|
+| Day 12 | 初始化 + Supabase 設定 + 首頁 |
+| Day 13 | 清單頁（景點列表 + 新增 + 刪除）|
+| Day 14 | 收尾 + 部署 Vercel |
+
+### 2. AI Issue Finder（Day 15+ 開始）
+解決「怎麼找適合自己的 OSS issue」問題。輸入 GitHub repo，用 Claude API 判斷 issue 適合度，輸出推薦清單。
+→ 詳細計畫：`day-11/project-plan-ai-issue-finder.md`
+
+**Tech stack：** GitHub API + Anthropic SDK（Claude API）+ CLI
 
 ---
 
@@ -23,9 +76,17 @@ Month 1 只做一件事：**搞清楚自己想走哪條路**。
 - [x] 初步整理學習方向 → day-6/learning-strategy.md
 - [x] DevRel 職缺深度分析（5 個）→ day-7/job-search.md
 - [x] DevRel 入行指南整理 → day-7/devrel-guide.md
-- [ ] 找一個 Move / DeFi 的小題目，開始寫（不需要完成，感受就好）
+- [x] 確認求職方向 + 規劃兩個 side project → day-11/
+- [ ] 找一個 Move / DeFi 的小題目，開始寫（感受就好，可跳過）
 
 ---
+
+## Week 2 回顧（2026-03-23 ~ 2026-03-28）
+
+- 職缺調查兩輪：第一輪 5 個（Frontend / Web3），第二輪 5 個（DevRel）
+- 觀察到兩個方向：Sui/Move 工程師 + DevRel，方向仍開放
+- 2026-03-28：決定不限 Web3，拓展看 A/B 類型公司
+- 確定 side project 路線：邊做邊驗證，比「先想清楚再動」有效
 
 ## Week 1 回顧（2026-03-18 ~ 2026-03-22）
 
@@ -34,12 +95,16 @@ Week 1 只有 3 天工作天，主力放在學習打底。
 ### ✅ 完成
 - Claude Code 完整課程（Day 1-5）：Context 管理、Custom Commands、MCP、GitHub Actions、Hooks 深度實作
 
-### ⏭ 順延到 Week 2
-- 職缺調查、side project 規劃、open source 目標 repo
-
 ---
 
 ## 已完成
+
+### Day 11（2026-03-28）
+- 求職方向調整：不限 Web3，拓展到 A/B 類型公司（Web3 新創 + 一般科技新創）
+- 確定未來幾週節奏：side project 主力 + 職缺觀察 + 履歷整理
+- 規劃兩個 side project：景點清單網站（Day 12）、AI Issue Finder（Day 15+）
+- → day-11/project-plan-spots.md
+- → day-11/project-plan-ai-issue-finder.md
 
 ### Day 7（2026-03-24）
 - DevRel / Technical Writer 方向職缺調查：第二輪，聚焦 DevRel 職缺（Tether P2P、Tether AI、Sui Foundation Walrus、Crossmint、Mysten Labs）→ day-7/job-search.md
@@ -88,14 +153,6 @@ Week 1 只有 3 天工作天，主力放在學習打底。
 
 ---
 
-## AI 工具清單
-
-| 工具名稱 | 狀態 | 說明 |
-|----------|------|------|
-| （空） | — | — |
-
----
-
 ## 職缺追蹤
 
 | 公司 | 職位 | 薪資 | 符合度 | 狀態 |
@@ -105,8 +162,8 @@ Week 1 只有 3 天工作天，主力放在學習打底。
 | Sui Foundation | Senior DevRel Engineer, Walrus (APAC) | 未標示 | ⭐⭐⭐⭐ | 觀察中（Month 3 投遞）|
 | Blockchain.com | Frontend Engineer (React) | $89K–$109K | ⭐⭐⭐⭐ | 觀察中 |
 | MLabs | Move (Sui) Engineer | 未標示 | ⭐⭐⭐⭐ | 觀察中（⚠️ EST overlap）|
-| Tether | Developer Relations P2P (100% remote) | $126K–$138K | ⭐⭐⭐⭐⭐ | 觀察中（短期投遞）|
-| Tether | Developer Relations AI / QVAC (100% remote) | $115K–$117K | ⭐⭐⭐⭐ | 觀察中（補 Llama.cpp 後投遞）|
+| Tether | Developer Relations P2P (100% remote) | $126K–$138K | ⭐⭐⭐⭐⭐ | 觀察中（Month 2 投遞）|
+| Tether | Developer Relations AI / QVAC (100% remote) | $115K–$117K | ⭐⭐⭐⭐ | 觀察中（Month 2 投遞）|
 | Mysten Labs | Senior Developer Relations Engineer | 未標示 | ⭐⭐⭐⭐ | 觀察中（Month 3，先貢獻）|
 | Crossmint | Senior Developer Relations Engineer | $140K–$175K | ⭐⭐⭐ | 觀察中（⚠️ US hybrid 限制）|
 
@@ -122,35 +179,27 @@ Week 1 只有 3 天工作天，主力放在學習打底。
 
 ---
 
-## 學習方向（持續更新，每週職缺調查後補充）
+## 學習方向（持續更新）
 
-> 這裡只記錄「目前已觀察到的方向」，不是定論。每天看職缺，每週末彙整一次。
+### 目前觀察到的技術需求（Week 2）
 
-### 目前觀察到的技術需求（Week 2，第一輪）
-
-| 技術 | 在職缺中出現頻率 | 備註 |
-|------|----------------|------|
-| Sui / Move | 高（Web3 職缺標配） | 已有實務 |
-| React / TypeScript | 高（通用） | 已有實務 |
-| viem / wagmi | 中（EVM frontend 職缺）| 缺口，待確認是否普遍 |
-| Walrus Protocol | 低（特定 DevRel 職缺）| 值得觀察 |
+| 技術 | 出現頻率 | 備註 |
+|------|----------|------|
+| Sui / Move | 高（Web3 職缺標配）| 已有實務 |
+| React / TypeScript | 高（通用）| 已有實務 |
+| Claude API / AI 整合 | 中（AI 產品公司）| 邊做 side project 邊學 |
+| viem / wagmi | 中（EVM frontend）| 缺口，待確認是否普遍 |
 | WebSocket / 即時資料 | 中（DEX 類職缺）| 待更多樣本確認 |
+| Walrus Protocol | 低（特定 DevRel）| 值得觀察 |
 
-_樣本數：5 個職缺（2026-03-23）。持續調查後更新。_
-
-### 貢獻目標 Repo（初步，待更多職缺確認）
-
-| Repo | 方向 | 狀態 |
-|------|------|------|
-| `MystenLabs/walrus` | 文件 / SDK 範例 | 待找 issue |
-| `MystenLabs/sui` examples | 文件 / 範例 | 待找 issue |
+_樣本數：10 個職缺（2026-03-23 ~ 2026-03-24）。持續調查後更新。_
 
 ---
 
 ## 筆記 / 方向調整
 
 - Week 1（只有 3 天）以學習打底為主
-- Week 2：職缺調查，初步觀察到 DevRel / 合約工程師兩個方向，方向仍在驗證中
-- 2026-03-25：調整計畫。Month 1 以驗證方向為主，不投遞不衝數字。每天 1h，有休息日，慢慢來。
-- 傾向方向：Sui/Move 合約工程師（DeFi）為主，DevRel 為探索。月底再決定。
+- Week 2：職缺調查兩輪，觀察到 DevRel / 合約工程師兩個方向
+- 2026-03-25：調整計畫。Month 1 以驗證方向為主，不投遞不衝數字。
+- 2026-03-28：調整方向。不限 Web3，拓展到 A/B 類型公司。Side project 主力，邊做邊學邊驗證。每天最低目標 3h，有休息日。
 - 能量狀況：低能量，工作不忙但下班後能量有限。計畫設計要有彈性、有休息空間。
