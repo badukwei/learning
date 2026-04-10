@@ -1,6 +1,6 @@
 # 求職進度追蹤
 
-更新：2026-03-31 ｜ Month 2 開始，Day 14
+更新：2026-04-09 ｜ Month 2，Day 20
 
 ---
 
@@ -37,16 +37,16 @@
 
 ---
 
-## 每日優先級（在職期間，4h 上限）
+## 每日優先級（5h，現階段）
 
 | 優先 | 內容 | 時間 |
 |------|------|------|
-| 🥇 | LeetCode（Easy→Medium，由簡入難）| 1h |
-| 🥇 | 系統設計概念 / 前端面試題（每天一個主題）| 1h |
-| 🥈 | Side project（景點清單 → AI Issue Finder）| 1h |
-| 🥈 | 投履歷（1個/天，週一到週五）| 30min |
-| 🔋 | 彈性 / 休息 | 30min |
+| 🥇 | LeetCode（2-3 題，Easy→Medium）| 1.5h |
+| 🥇 | Side project（AI workflow / 後端知識）| 2h |
+| 🥈 | 系統設計 or AI 開發課程 | 1h |
+| 🥈 | 投履歷（1 個全遠端，週一到週五）| 30min |
 
+> 忙的時候：只留 LeetCode 1 題 + 投 1 個，其他跳過。
 > 離職後（Month 4 起）投遞量升為 3-5/天，面試準備時間翻倍。
 
 ---
@@ -84,7 +84,7 @@
 
 ## 投遞紀錄
 
-已投：2 個（截至 2026-03-31）
+已投：7-8 個（截至 2026-04-09）
 本月目標：20 個（平日每天 1 個）
 
 ---
@@ -107,6 +107,11 @@ Week 1 只有 3 天工作天，主力放在學習打底。
 ---
 
 ## 已完成
+
+### Day 19（2026-04-08）
+- LeetCode Arrays & Hashing 補題 6 題：Contains Duplicate, Valid Anagram, Two Sum, Group Anagrams, Encode and Decode Strings, Product of Array Except Self
+- HashMap 各種用法打通（HashSet、計次、存 index、排序當 key、Prefix/Postfix）
+- 投遞：thingnario 慧景科技 Senior Full Stack（Hybrid，備選性質）
 
 ### Day 11（2026-03-28）
 - 求職方向調整：不限 Web3，拓展到 A/B 類型公司
@@ -150,6 +155,7 @@ Week 1 只有 3 天工作天，主力放在學習打底。
 | DuckDuckGo | Senior Frontend Engineer, React/TypeScript | $178,500 | ⭐⭐⭐⭐ | 觀察中（確認台灣是否接受）|
 | Phantom | Software Engineer, Frontend/Full Stack | $200K–$250K | ⭐⭐⭐ | 觀察中（⚠️ US/EU 時區限制）|
 | Kraken | Frontend Engineer | $96K–$277K | ⭐⭐⭐⭐ | 觀察中（直接查 careers 頁）|
+| thingnario 慧景科技 | Senior Full Stack Engineer | NT$150-200萬（~$46-62k USD） | ⭐⭐ | 已投（⚠️ Hybrid，非遠端，低於薪資目標）|
 
 ---
 
@@ -168,7 +174,9 @@ Week 1 只有 3 天工作天，主力放在學習打底。
 
 ### LeetCode
 - 目標：Easy 全會 → Medium 60%+
-- 目前：Easy 大部分可以，Medium 待確認
+- 目前：Arrays & Hashing 大部分完成（Contains Duplicate, Valid Anagram, Two Sum, Group Anagrams, Encode and Decode Strings, Product of Array Except Self）
+- HashMap 各種用法已熟悉，Medium 可解
+- 下一步：Arrays & Hashing 剩餘題 or Two Pointers
 - 節奏：每天 1 題（平日）
 
 ### 系統設計
@@ -180,6 +188,15 @@ Week 1 只有 3 天工作天，主力放在學習打底。
 - 目標：覆蓋 React 核心、TypeScript、瀏覽器原理、效能優化
 - 目前：未系統整理
 - 節奏：每天 1 個主題
+
+---
+
+## 自媒體計畫
+
+- 平台：TikTok + Instagram（影片）、LinkedIn + X + Threads（文字）
+- 頻率：一週兩次，同一內容跨發，不特別維護
+- 內容：學習日記、side project 進度、求職觀察
+- 啟動時間：2026-04 開始
 
 ---
 
