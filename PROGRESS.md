@@ -1,6 +1,6 @@
 # 求職進度追蹤
 
-更新：2026-04-09 ｜ Month 2，Day 20
+更新：2026-04-12 ｜ Month 2，Day 23
 
 ---
 
@@ -84,7 +84,7 @@
 
 ## 投遞紀錄
 
-已投：7-8 個（截至 2026-04-09）
+已投：8-9 個（截至 2026-04-12）
 本月目標：20 個（平日每天 1 個）
 
 ---
@@ -107,6 +107,17 @@ Week 1 只有 3 天工作天，主力放在學習打底。
 ---
 
 ## 已完成
+
+### Day 23（2026-04-12）
+- LeetCode 3 題
+- 投遞：Blockaid（區塊鏈安全，符合安全監控背景）
+
+### Day 22（2026-04-11）
+- 景點清單：後端建立完成
+- 研究 AI 開發 workflow
+
+### Day 20（2026-04-09）
+- LeetCode 5 題
 
 ### Day 19（2026-04-08）
 - LeetCode Arrays & Hashing 補題 6 題：Contains Duplicate, Valid Anagram, Two Sum, Group Anagrams, Encode and Decode Strings, Product of Array Except Self
@@ -155,6 +166,7 @@ Week 1 只有 3 天工作天，主力放在學習打底。
 | DuckDuckGo | Senior Frontend Engineer, React/TypeScript | $178,500 | ⭐⭐⭐⭐ | 觀察中（確認台灣是否接受）|
 | Phantom | Software Engineer, Frontend/Full Stack | $200K–$250K | ⭐⭐⭐ | 觀察中（⚠️ US/EU 時區限制）|
 | Kraken | Frontend Engineer | $96K–$277K | ⭐⭐⭐⭐ | 觀察中（直接查 careers 頁）|
+| Blockaid | （職位待補）| 未標示 | ⭐⭐⭐⭐ | 已投（區塊鏈安全，符合安全監控背景）|
 | thingnario 慧景科技 | Senior Full Stack Engineer | NT$150-200萬（~$46-62k USD） | ⭐⭐ | 已投（⚠️ Hybrid，非遠端，低於薪資目標）|
 
 ---
@@ -174,9 +186,9 @@ Week 1 只有 3 天工作天，主力放在學習打底。
 
 ### LeetCode
 - 目標：Easy 全會 → Medium 60%+
-- 目前：Arrays & Hashing 大部分完成（Contains Duplicate, Valid Anagram, Two Sum, Group Anagrams, Encode and Decode Strings, Product of Array Except Self）
+- 目前：Arrays & Hashing 大部分完成 + Day 20 補 5 題 + Day 23 補 3 題，共約 14 題
 - HashMap 各種用法已熟悉，Medium 可解
-- 下一步：Arrays & Hashing 剩餘題 or Two Pointers
+- 下一步：Two Pointers
 - 節奏：每天 1 題（平日）
 
 ### 系統設計
