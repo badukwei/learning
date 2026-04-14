@@ -1,6 +1,6 @@
 # 求職進度追蹤
 
-更新：2026-04-12 ｜ Month 2，Day 23
+更新：2026-04-14 ｜ Month 2，Day 24
 
 ---
 
@@ -107,6 +107,11 @@ Week 1 只有 3 天工作天，主力放在學習打底。
 ---
 
 ## 已完成
+
+### Day 24（2026-04-14）
+- 系統設計：Session 管理深度討論（Sticky Sessions vs Redis Session vs JWT vs Short-lived JWT + Refresh Token）
+- 系統設計：Web Hosting & Scalability（SFTP、VPS、Elastic Scaling、現代服務商比較）
+- 釐清：HTTP 無狀態 → Session 存在原因、Redis 暫存 vs DB 持久化、ORM SQL Injection 防護機制
 
 ### Day 23（2026-04-12）
 - LeetCode 3 題
