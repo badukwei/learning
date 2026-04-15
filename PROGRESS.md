@@ -1,6 +1,6 @@
 # 求職進度追蹤
 
-更新：2026-04-14 ｜ Month 2，Day 24
+更新：2026-04-15 ｜ Month 2，Day 25
 
 ---
 
@@ -108,6 +108,14 @@ Week 1 只有 3 天工作天，主力放在學習打底。
 
 ## 已完成
 
+### Day 25（2026-04-15）
+- LeetCode 4 題（Stack）
+- 系統設計：Load Balancer 深度學習
+  - 基礎概念：Layer 4/7、分流算法、Sticky Sessions、Health Check、SPOF、HA、TCP vs UDP vs HTTP
+  - 總體設計：工具比較（AWS ALB/NLB、Cloudflare、Nginx、HAProxy、Traefik、Envoy）、架構模式、程式碼
+  - Case Study：GitHub GLB（Rendezvous Hashing、GUE、DPDK）、Slack（HAProxy→Envoy）、Shopify（Nginx+Lua）、Dropbox（Robinhood）、Twitter（Deterministic Aperture）、Lyft（Envoy）
+- 筆記拆成三份：lb-basics.md、lb-architecture.md、lb-case-study.md
+
 ### Day 24（2026-04-14）
 - 系統設計：Session 管理深度討論（Sticky Sessions vs Redis Session vs JWT vs Short-lived JWT + Refresh Token）
 - 系統設計：Web Hosting & Scalability（SFTP、VPS、Elastic Scaling、現代服務商比較）
@@ -191,14 +199,17 @@ Week 1 只有 3 天工作天，主力放在學習打底。
 
 ### LeetCode
 - 目標：Easy 全會 → Medium 60%+
-- 目前：Arrays & Hashing 大部分完成 + Day 20 補 5 題 + Day 23 補 3 題，共約 14 題
+- 目前：Arrays & Hashing 完成 + Stack 進行中（Day 25 做了 4 題），共約 18 題
 - HashMap 各種用法已熟悉，Medium 可解
-- 下一步：Two Pointers
+- 下一步：Stack 收尾 → Two Pointers
 - 節奏：每天 1 題（平日）
 
 ### 系統設計
 - 目標：Month 3 前掌握基礎（DB 索引、Cache、API 設計、Load Balancer）
-- 目前：未開始
+- 目前：Load Balancer 完成（基礎概念 + 架構 + Case Study）
+- 下一步：
+  1. 繼續閱讀其他 LB case study（Uber、Dropbox Bandaid 細節等）
+  2. 資料庫（DB 索引、Sharding、Replication、ACID）
 - 資源：System Design Primer（GitHub）
 
 ### 前端面試題
