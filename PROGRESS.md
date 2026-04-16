@@ -1,6 +1,6 @@
 # 求職進度追蹤
 
-更新：2026-04-15 ｜ Month 2，Day 25
+更新：2026-04-16 ｜ Month 2，Day 26
 
 ---
 
@@ -84,7 +84,7 @@
 
 ## 投遞紀錄
 
-已投：8-9 個（截至 2026-04-12）
+已投：10-11 個（截至 2026-04-16）
 本月目標：20 個（平日每天 1 個）
 
 ---
@@ -107,6 +107,10 @@ Week 1 只有 3 天工作天，主力放在學習打底。
 ---
 
 ## 已完成
+
+### Day 26（2026-04-16）
+- LeetCode 4 題（Binary Search）
+- 投遞：Grafana Labs（Frontend Engineer）、Gamintec
 
 ### Day 25（2026-04-15）
 - LeetCode 4 題（Stack）
@@ -181,6 +185,8 @@ Week 1 只有 3 天工作天，主力放在學習打底。
 | Kraken | Frontend Engineer | $96K–$277K | ⭐⭐⭐⭐ | 觀察中（直接查 careers 頁）|
 | Blockaid | （職位待補）| 未標示 | ⭐⭐⭐⭐ | 已投（區塊鏈安全，符合安全監控背景）|
 | thingnario 慧景科技 | Senior Full Stack Engineer | NT$150-200萬（~$46-62k USD） | ⭐⭐ | 已投（⚠️ Hybrid，非遠端，低於薪資目標）|
+| Grafana Labs | Frontend Engineer | 未標示 | ⭐⭐⭐⭐⭐ | 已投（監控系統背景直接符合，遠端）|
+| Gamingtec | Frontend Developer（React/TypeScript）| 未標示 | ⭐⭐⭐⭐ | 已投（全遠端，React 18 + Redux + TS + Webpack 完全符合）|
 
 ---
 
@@ -199,9 +205,9 @@ Week 1 只有 3 天工作天，主力放在學習打底。
 
 ### LeetCode
 - 目標：Easy 全會 → Medium 60%+
-- 目前：Arrays & Hashing 完成 + Stack 進行中（Day 25 做了 4 題），共約 18 題
+- 目前：Arrays & Hashing 完成 + Stack 完成 + Binary Search 進行中（Day 26 做了 4 題），共約 22 題
 - HashMap 各種用法已熟悉，Medium 可解
-- 下一步：Stack 收尾 → Two Pointers
+- 下一步：Binary Search 收尾 → Two Pointers
 - 節奏：每天 1 題（平日）
 
 ### 系統設計
