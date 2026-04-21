@@ -1,6 +1,6 @@
 # 求職進度追蹤
 
-更新：2026-04-17 ｜ Month 2，Day 27
+更新：2026-04-21 ｜ Month 2，Day 28
 
 ---
 
@@ -73,14 +73,16 @@
 
 ---
 
-## 本週任務（Week 3，Day 14-17）
+## 下週任務（Week 7，Day 29-33，2026-04-22 ~ 2026-04-25）
 
-- [ ] 景點清單：初始化 + Supabase 設定 + 首頁（Day 14-15）
-- [ ] 景點清單：清單頁功能（Day 16）
-- [ ] 景點清單：部署 Vercel（Day 17）
-- [ ] LeetCode：每天 1 題 Easy（建立節奏）
-- [ ] 前端面試題：每天 1 個主題（e.g. Virtual DOM, useEffect, closure）
-- [ ] 投履歷：每個工作天 1 個（本週 3 天 = 3 個，加上已投 2 個 = 共 5 個）
+系統設計從 Redis 接著往 DB 深化走，LeetCode 繼續 Binary Search → Two Pointers。
+
+- [ ] 系統設計：快速回顧 Redis（10 分鐘複習 day-28/redis.md）→ 接 DB 深化
+- [ ] 系統設計：ACID 與 Transaction Isolation（Dirty Read / Phantom Read / 隔離層級實作）
+- [ ] 系統設計：PostgreSQL vs MySQL 核心差異（MVCC 實作、Index 差異、JSON 支援）
+- [ ] 系統設計：Index 實戰（EXPLAIN ANALYZE 解讀、Composite / Covering / Partial 實際範例）
+- [ ] LeetCode：Binary Search 收尾（2-3 題 Medium）→ Two Pointers 開始
+- [ ] 投履歷：每週 2-3 個（有目標地挑）
 
 ---
 
@@ -109,6 +111,23 @@ Week 1 只有 3 天工作天，主力放在學習打底。
 ---
 
 ## 已完成
+
+### Day 28（2026-04-21）
+- 系統設計：Storage & DB Optimization
+  - 快取：MySQL Query Cache 已死（MySQL 8.0 移除）、Redis vs Memcached、CDN、Cache-Aside / Write-Through / Write-Behind
+  - DB 擴展：Primary-Replica、Aurora 共用 Storage 架構、Vitess / PlanetScale Sharding、NewSQL（CockroachDB / TiDB）
+  - 新概念：Connection Pooling、WAL、MVCC、ACID vs BASE、Index 策略（B-Tree / Hash / Covering / Partial）、N+1 Problem、EXPLAIN 分析
+  - 新舊對比：2012 Harvard CS75 vs 現代做法、決策框架（流量規模 → 對應架構）
+  - 筆記：day-28/storage-db-optimization.md
+- 系統設計：Redis 深度學習
+  - 原理：單執行緒 Event Loop、RAM vs 磁碟速度差異、記憶體淘汰策略（LRU/noeviction）
+  - 資料結構：String / Hash / List / Set / Sorted Set / Stream 各自場景
+  - Cache 模式：Cache-Aside / Write-Through / Write-Behind、TTL 設計
+  - 常見問題：Cache Stampede、Cache Penetration（Bloom Filter）、Hot Key
+  - 作為 DB：RDB 快照 vs AOF Append Log、兩個都開的原因
+  - 高可用：Sentinel（自動 Failover）vs Cluster（Sharding，16384 slots）
+  - 實際範例：Rate Limiting、分散式鎖、排行榜
+  - 筆記：day-28/redis.md
 
 ### Day 26（2026-04-16）
 - LeetCode 4 題（Binary Search）
@@ -213,12 +232,57 @@ Week 1 只有 3 天工作天，主力放在學習打底。
 - 節奏：每天 1 題（平日）
 
 ### 系統設計
-- 目標：Month 3 前掌握基礎（DB 索引、Cache、API 設計、Load Balancer）
-- 目前：Load Balancer 完成（基礎概念 + 架構 + Case Study）
+- 目標：Month 3 前掌握基礎（Cache、DB、API 設計、Load Balancer）
+- 目前進度：Load Balancer ✅ → Storage & DB Optimization ✅ → Redis ✅
 - 下一步：
-  1. 繼續閱讀其他 LB case study（Uber、Dropbox Bandaid 細節等）
-  2. 資料庫（DB 索引、Sharding、Replication、ACID）
+  1. 資料庫深化（ACID Transaction Isolation、Index 實戰、PostgreSQL vs MySQL）
+  2. API 設計（RESTful、Rate Limiting、Idempotency、API Gateway）
+  3. 完整系統設計練習（URL Shortener → Twitter Feed → Chat 系統）
 - 資源：System Design Primer（GitHub）
+
+**學習心智圖**
+
+```
+系統設計學習路線
+│
+├── Load Balancer ✅（day-25）
+│   ├── Layer 4 / Layer 7 差異
+│   ├── 分流算法（Round Robin / Least Conn / IP Hash）
+│   ├── HAProxy vs Envoy（config file vs xDS 動態更新）
+│   └── Case Study：GitHub GLB / Slack / Shopify / Dropbox / Twitter / Lyft
+│
+├── Storage & DB Optimization ✅（day-28）
+│   ├── 硬體：NVMe SSD 已是標準，雲端平台管備援
+│   ├── 快取策略：Cache-Aside / Write-Through / Write-Behind
+│   ├── DB 擴展：Primary-Replica → Sharding（Vitess）→ NewSQL
+│   ├── 索引：B-Tree / Covering / Partial，EXPLAIN 分析
+│   └── 底層：WAL / MVCC / ACID vs BASE
+│
+├── Redis ✅（day-28）
+│   ├── 原理：單執行緒 Event Loop，RAM 速度（0.01ms）
+│   ├── 資料結構：String / Hash / List / Set / ZSet / Stream
+│   ├── Cache 模式 + 三大問題（Stampede / Penetration / Hot Key）
+│   ├── Persistence：RDB（快照）vs AOF（Append Log），生產兩個都開
+│   └── 高可用：Sentinel（Failover）vs Cluster（16384 slots）
+│
+├── 資料庫深化（下週）
+│   ├── ACID 四特性與 Transaction Isolation Levels
+│   ├── Dirty Read / Non-repeatable Read / Phantom Read
+│   ├── PostgreSQL vs MySQL 核心差異
+│   └── Index 實戰（EXPLAIN ANALYZE 解讀）
+│
+├── API 設計（Month 3）
+│   ├── RESTful 設計原則（冪等性、狀態碼、版本控制）
+│   ├── Rate Limiting（Token Bucket / Leaky Bucket）
+│   ├── Idempotency（冪等鍵）
+│   └── API Gateway（認證、限流、路由）
+│
+└── 完整系統設計練習（Month 3-4）
+    ├── URL Shortener（入門，考 Hashing + DB 選型）
+    ├── Twitter Feed（考 Fan-out、Cache、Sharding）
+    ├── Chat 系統（考 WebSocket、消息隊列、已讀狀態）
+    └── 面試流程：需求澄清 → 估算規模 → 架構圖 → 深挖細節
+```
 
 ### 前端面試題
 - 目標：覆蓋 React 核心、TypeScript、瀏覽器原理、效能優化
