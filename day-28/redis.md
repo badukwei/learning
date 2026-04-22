@@ -484,6 +484,378 @@ rank = redis.zrevrank("leaderboard:weekly", f"user:{user_id}")
 
 ---
 
+## 十、連線設定實戰
+
+### 環境變數（所有環境共用）
+
+```bash
+# .env
+REDIS_URL=redis://localhost:6379           # 本地
+REDIS_URL=redis://:password@host:6379      # 有密碼
+REDIS_URL=rediss://host:6380               # TLS（rediss://，多一個 s）
+```
+
+---
+
+### Node.js — ioredis（業界最常用）
+
+```bash
+npm install ioredis
+```
+
+**基本連線**
+
+```typescript
+import Redis from 'ioredis'
+
+const redis = new Redis(process.env.REDIS_URL)
+
+// 測試連線
+await redis.ping()  // → "PONG"
+```
+
+**建議寫法：單例模式（整個 App 共用一個連線）**
+
+```typescript
+// lib/redis.ts
+import Redis from 'ioredis'
+
+let redis: Redis
+
+if (process.env.NODE_ENV === 'production') {
+  redis = new Redis(process.env.REDIS_URL!)
+} else {
+  // 開發環境：避免 hot reload 每次建新連線
+  if (!(global as any).__redis) {
+    (global as any).__redis = new Redis(process.env.REDIS_URL!)
+  }
+  redis = (global as any).__redis
+}
+
+export default redis
+```
+
+**使用**
+
+```typescript
+import redis from '@/lib/redis'
+
+// 寫
+await redis.set('key', 'value')
+await redis.setex('key', 300, 'value')   // 設 TTL 300 秒
+await redis.set('key', 'value', 'EX', 300)  // 同上，另一種寫法
+
+// 讀
+const value = await redis.get('key')     // string | null
+
+// 刪
+await redis.del('key')
+
+// 計數
+await redis.incr('counter')
+await redis.incrby('counter', 5)
+
+// Hash
+await redis.hset('user:123', 'name', 'Alice', 'age', '30')
+await redis.hget('user:123', 'name')     // "Alice"
+await redis.hgetall('user:123')          // { name: 'Alice', age: '30' }
+
+// JSON（ioredis 沒有原生 JSON，要自己序列化）
+await redis.set('user:123', JSON.stringify({ name: 'Alice' }))
+const raw = await redis.get('user:123')
+const user = raw ? JSON.parse(raw) : null
+```
+
+**連線設定選項**
+
+```typescript
+const redis = new Redis({
+  host: 'localhost',
+  port: 6379,
+  password: 'yourpassword',
+  db: 0,                    // Redis 有 0-15 個 DB，預設 0
+  maxRetriesPerRequest: 3,  // 失敗重試次數
+  retryStrategy(times) {
+    return Math.min(times * 100, 3000)  // 指數退避，最多等 3 秒
+  },
+  lazyConnect: true,        // 不立刻連，第一次操作才連
+})
+```
+
+---
+
+### Next.js + Upstash（Serverless 首選）
+
+Vercel 部署時用 Upstash，原因：
+- 傳統 Redis 是長連線，Serverless function 每次冷啟動都建新連線 → 連線數爆炸
+- Upstash 用 HTTP 協議，無狀態，天生適合 Serverless
+
+```bash
+npm install @upstash/redis
+```
+
+```typescript
+// lib/redis.ts
+import { Redis } from '@upstash/redis'
+
+const redis = new Redis({
+  url: process.env.UPSTASH_REDIS_REST_URL!,
+  token: process.env.UPSTASH_REDIS_REST_TOKEN!,
+})
+
+export default redis
+```
+
+```bash
+# .env
+UPSTASH_REDIS_REST_URL=https://xxx.upstash.io
+UPSTASH_REDIS_REST_TOKEN=AxxxXXX
+```
+
+**使用方式跟 ioredis 幾乎一樣**
+
+```typescript
+await redis.set('key', 'value', { ex: 300 })  // 注意 Upstash 用物件設 TTL
+const value = await redis.get('key')
+
+// Upstash 原生支援 JSON，不用手動序列化
+await redis.set('user:123', { name: 'Alice', age: 30 })
+const user = await redis.get<{ name: string; age: number }>('user:123')
+```
+
+---
+
+### Cache-Aside 完整範例（Next.js API Route）
+
+```typescript
+// app/api/users/[id]/route.ts
+import redis from '@/lib/redis'
+import db from '@/lib/db'
+
+export async function GET(req: Request, { params }: { params: { id: string } }) {
+  const { id } = params
+  const cacheKey = `user:${id}`
+
+  // 1. 查 Redis
+  const cached = await redis.get(cacheKey)
+  if (cached) {
+    return Response.json(JSON.parse(cached as string))
+  }
+
+  // 2. 查 DB
+  const user = await db.user.findUnique({ where: { id } })
+  if (!user) {
+    return Response.json({ error: 'Not found' }, { status: 404 })
+  }
+
+  // 3. 寫回 Redis，TTL 5 分鐘
+  await redis.setex(cacheKey, 300, JSON.stringify(user))
+
+  return Response.json(user)
+}
+
+export async function PUT(req: Request, { params }: { params: { id: string } }) {
+  const { id } = params
+  const body = await req.json()
+
+  // 1. 更新 DB
+  const user = await db.user.update({ where: { id }, data: body })
+
+  // 2. 刪 Redis（讓下次讀重建）
+  await redis.del(`user:${id}`)
+
+  return Response.json(user)
+}
+```
+
+---
+
+### Python — redis-py
+
+```bash
+pip install redis
+```
+
+```python
+import redis
+import json
+import os
+
+# 連線
+r = redis.from_url(os.environ['REDIS_URL'], decode_responses=True)
+# decode_responses=True → 自動把 bytes 轉成 str，省得每次 .decode()
+
+# 基本操作
+r.set('key', 'value', ex=300)     # 設值 + TTL
+value = r.get('key')               # str | None
+
+# JSON
+r.set('user:123', json.dumps({'name': 'Alice'}), ex=300)
+user = json.loads(r.get('user:123'))
+
+# Pipeline（批次操作，一次送）
+pipe = r.pipeline()
+pipe.set('a', 1)
+pipe.set('b', 2)
+pipe.incr('counter')
+pipe.execute()   # 一次送出三個指令
+```
+
+---
+
+### 本地開發（Docker）
+
+```bash
+# 啟動 Redis
+docker run -d --name redis -p 6379:6379 redis:7-alpine
+
+# 進 CLI 測試
+docker exec -it redis redis-cli
+> ping        → PONG
+> set foo bar
+> get foo     → "bar"
+```
+
+```yaml
+# docker-compose.yml（搭配整個 App 用）
+services:
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    command: redis-server --requirepass yourpassword  # 設密碼
+```
+
+---
+
+## 十一、部署架構與備援
+
+### Redis 永遠獨立部署
+
+```
+錯誤（Redis 跟 App 混在一起）：
+  App Server 1 → Redis A（各自的）
+  App Server 2 → Redis B（各自的）
+  → 資料不共用，Cache 失去意義
+
+正確：
+  App Server 1 ─┐
+  App Server 2 ─┤→ Redis（獨立機器）→ PostgreSQL
+  App Server 3 ─┘
+```
+
+### 生產環境備援
+
+**Sentinel（中小規模）**
+
+```
+Master（讀寫）
+  ↓ 非同步複製
+Replica 1、Replica 2
+
+Sentinel × 3 → 監控 Master 心跳 → Master 掛了自動投票選新 Master
+
+App 連 Sentinel，不直接連 Master
+→ Master 換了，App 不用改設定，Sentinel 自動通知
+→ Failover 約 10-30 秒，期間短暫不可寫
+```
+
+**Cluster（大規模）**
+
+```
+Node 1 Master + Replica → 負責 slot 0-5460
+Node 2 Master + Replica → 負責 slot 5461-10922
+Node 3 Master + Replica → 負責 slot 10923-16383
+
+某個 Master 掛掉 → 自己的 Replica 自動接手
+App 不感知，ioredis 自動路由
+```
+
+### 實際生產架構
+
+```
+Internet → Load Balancer（AWS ALB）
+                ↓
+         App Server × N（ECS / K8s）
+           │                  │
+           ↓                  ↓
+     Redis Cluster        PostgreSQL Aurora
+    （AWS ElastiCache）    （AWS RDS）
+      Master × 3            Primary + Replica
+      Replica × 3           跨 3 AZ
+      跨 3 AZ
+```
+
+每一層都跨多個 AZ，任一 AZ 掛掉服務不中斷。
+
+### 託管 vs 自建
+
+| | 自建（K8s + Helm）| 託管（ElastiCache / Upstash）|
+|--|------------------|------------------------------|
+| 備援設定 | 自己設 Sentinel/Cluster | 平台自動處理 |
+| Failover | 自己監控 | 自動，Dashboard + Alert 內建 |
+| 成本 | 低（只付機器）| 高一點 |
+| 維運成本 | 高 | 幾乎沒有 |
+| 適合 | 大公司、有 SRE 團隊 | 中小公司首選 |
+
+---
+
+## 十二、微服務中的 Redis 設計
+
+多個服務怎麼用 Redis，四種做法：
+
+**Option 1：各服務獨立 Redis（最乾淨）**
+
+```
+User Service    → Redis A
+Order Service   → Redis B
+Payment Service → Redis C
+```
+
+完全隔離，一個服務的 Hot Key 不影響其他服務，可獨立擴展。
+大公司（Netflix、Uber）的做法，成本較高。
+
+**Option 2：共用 Redis，DB number 隔開**
+
+```typescript
+const userRedis  = new Redis({ url: REDIS_URL, db: 0 })
+const orderRedis = new Redis({ url: REDIS_URL, db: 1 })
+```
+
+省錢，一台搞定。缺點：Cluster 模式不支援多 DB，沒辦法獨立擴展。
+
+**Option 3：共用 Redis，key prefix 隔開（最常見折衷）**
+
+```
+user:cache:123、user:session:abc
+order:cache:456、order:lock:789
+```
+
+最簡單，沒有真正隔離，適合服務少、流量不大的情況。
+
+**Option 4：同一服務連多個 Redis（不同用途）**
+
+```typescript
+export const cacheRedis   = new Redis(process.env.REDIS_CACHE_URL!)
+export const queueRedis   = new Redis(process.env.REDIS_QUEUE_URL!)
+export const sessionRedis = new Redis(process.env.REDIS_SESSION_URL!)
+```
+
+原因：不同用途需要不同 eviction policy，同一台只能設一種：
+- Cache → `allkeys-lru`（滿了淘汰最舊的）
+- Queue / Session → `noeviction`（滿了報錯，不能亂刪）
+
+**選擇原則**
+
+```
+服務少、流量小   → Option 3（key prefix）
+服務中等        → Option 2（DB number）
+服務多、高流量  → Option 1（各自獨立）
+需要不同 policy → Option 4（多個 Redis URL）
+```
+
+---
+
 ## 總結
 
 ```
