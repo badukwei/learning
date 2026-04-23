@@ -1,6 +1,6 @@
 # 求職進度追蹤
 
-更新：2026-04-21 ｜ Month 2，Day 28
+更新：2026-04-23 ｜ Month 2，Day 30
 
 ---
 
@@ -73,11 +73,10 @@
 
 ---
 
-## 下週任務（Week 7，Day 29-33，2026-04-22 ~ 2026-04-25）
+## 下週任務（Week 8，Day 31-35，2026-04-28 ~ 2026-05-02）
 
-系統設計從 Redis 接著往 DB 深化走，LeetCode 繼續 Binary Search → Two Pointers。
+系統設計往 DB 深化走，LeetCode 繼續 Binary Search → Two Pointers。
 
-- [ ] 系統設計：快速回顧 Redis（10 分鐘複習 day-28/redis.md）→ 接 DB 深化
 - [ ] 系統設計：ACID 與 Transaction Isolation（Dirty Read / Phantom Read / 隔離層級實作）
 - [ ] 系統設計：PostgreSQL vs MySQL 核心差異（MVCC 實作、Index 差異、JSON 支援）
 - [ ] 系統設計：Index 實戰（EXPLAIN ANALYZE 解讀、Composite / Covering / Partial 實際範例）
@@ -111,6 +110,27 @@ Week 1 只有 3 天工作天，主力放在學習打底。
 ---
 
 ## 已完成
+
+### Day 30（2026-04-23）
+- 系統設計：Redis 實戰應用深化（6 個主題）
+  - Cache Stampede：TTL 抖動、Cache Warming、Mutex Lock、Facebook Lease 機制（同時解 Thundering Herd + Stale Set）
+  - Cache Penetration：空值快取、Bloom Filter、Rate Limit 與 Bloom Filter 的互補關係
+  - Rate Limiting：Fixed Window（邊界攻擊問題）、Sliding Window（Sorted Set）、Token Bucket（允許爆發）
+  - Session 管理：多實例共享 Session、強制登出所有裝置、Session vs JWT 比較
+  - 身份驗證完整流程：JWT Access Token（15m）+ Refresh Token（7天）+ Redis，登入 / 正常請求 / 換 token / 登出四個流程
+  - 分散式鎖：庫存扣減防超賣、重複付款防止（冪等鎖）、定時任務防重複執行
+  - 筆記：day-30/cache-stampede.md、cache-penetration.md、rate-limiting.md、session.md、auth-flow.md、distributed-lock.md
+
+### Day 29（2026-04-22）
+- 系統設計：API 快取模式
+  - Redis key 設計原則（user:123:profile、feed:user:123:page:1）
+  - withCache 通用 helper（Cache-Aside 封裝）
+  - HTTP Cache-Control（public / private / no-store / stale-while-revalidate）
+  - ETag 條件式請求（省頻寬，不是省 DB）
+  - 前端快取：SWR（revalidateOnFocus / mutate）、TanStack Query（queryKey / staleTime / invalidateQueries）、Next.js fetch cache（revalidate / revalidateTag）
+  - CDN Cache vs Redis Cache：網路層自動 vs 應用層手動
+  - 金融場景：餘額不快取、Write-Through + Transaction、分散式鎖讀取
+  - 筆記：day-29/api-cache.md
 
 ### Day 28（2026-04-21）
 - 系統設計：Storage & DB Optimization
@@ -258,12 +278,15 @@ Week 1 只有 3 天工作天，主力放在學習打底。
 │   ├── 索引：B-Tree / Covering / Partial，EXPLAIN 分析
 │   └── 底層：WAL / MVCC / ACID vs BASE
 │
-├── Redis ✅（day-28）
+├── Redis ✅（day-28 ~ day-30）
 │   ├── 原理：單執行緒 Event Loop，RAM 速度（0.01ms）
 │   ├── 資料結構：String / Hash / List / Set / ZSet / Stream
 │   ├── Cache 模式 + 三大問題（Stampede / Penetration / Hot Key）
 │   ├── Persistence：RDB（快照）vs AOF（Append Log），生產兩個都開
-│   └── 高可用：Sentinel（Failover）vs Cluster（16384 slots）
+│   ├── 高可用：Sentinel（Failover）vs Cluster（16384 slots）
+│   ├── API 快取：withCache helper、ETag、CDN vs Redis、前端 SWR / TanStack Query
+│   ├── 實戰應用：Rate Limiting（3 種算法）、Session、Auth Flow（JWT + Refresh Token）
+│   └── 分散式鎖：NX EX 原子操作、庫存 / 付款 / Cron 防重複
 │
 ├── 資料庫深化（下週）
 │   ├── ACID 四特性與 Transaction Isolation Levels
