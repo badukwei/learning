@@ -111,6 +111,18 @@ Week 1 只有 3 天工作天，主力放在學習打底。
 
 ## 已完成
 
+### Day 36（2026-05-04）
+- 新增求職紀錄資料夾：`job-search/`
+- 整理求職策略：
+  - 不走純海投，也不走純精投
+  - 採用 `A 精投 + B 半客製化大量投遞 + C 快速補量`
+  - 目前優先修正轉換率，而不是盲目增加投遞量
+- 整理本週主線：
+  - 學習節奏持續（LeetCode + 系統設計）
+  - 開始經營 LinkedIn 輸出
+  - coffee chat 以增加影響力與曝光為主
+  - 本週目標：2 篇 LinkedIn、3 個 outreach、5-6 個精準投遞
+
 ### Day 30（2026-04-23）
 - 系統設計：Redis 實戰應用深化（6 個主題）
   - Cache Stampede：TTL 抖動、Cache Warming、Mutex Lock、Facebook Lease 機制（同時解 Thundering Herd + Stale Set）
