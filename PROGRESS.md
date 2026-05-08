@@ -1,6 +1,6 @@
 # 求職進度追蹤
 
-更新：2026-04-23 ｜ Month 2，Day 30
+更新：2026-05-07 ｜ Month 3，Day 39
 
 ---
 
@@ -111,6 +111,14 @@ Week 1 只有 3 天工作天，主力放在學習打底。
 
 ## 已完成
 
+### Day 39（2026-05-07）
+- 求職：整理聚合站 → 官方 ATS 驗證流程
+  - 新增 lead 清單：`job-search/leads-2026-05-07.tsv`
+  - 新增待驗證 checklist：`job-search/leads-2026-05-07-checklist.md`
+  - 開始用 `Whippy / Tether / Koinly / DeepSense / Fingerprint` 當第一批遠端職缺池
+- 投遞結果更新：
+  - `Tether` — `Senior Frontend Developer (100% Remote Worldwide)`：已被拒絕
+
 ### Day 36（2026-05-04）
 - 新增求職紀錄資料夾：`job-search/`
 - 整理求職策略：
@@ -122,6 +130,28 @@ Week 1 只有 3 天工作天，主力放在學習打底。
   - 開始經營 LinkedIn 輸出
   - coffee chat 以增加影響力與曝光為主
   - 本週目標：2 篇 LinkedIn、3 個 outreach、5-6 個精準投遞
+
+### Day 37（2026-05-05）
+- 系統設計口試練習：DB replication 基礎問答
+  - 題目：Primary 寫入後，為什麼讀 Replica 會看到舊資料
+  - 校正重點：先分清楚 DB replication lag、session、cache、前端快取是不同層次問題
+  - 筆記：`records/day-37/db-replication-qa.md`
+- 系統設計深化：金融 / 交易系統的資料一致性、failover、監控
+  - 釐清 async replication 為什麼在 failover 時可能丟最後幾筆資料
+  - 理解 sync replication / quorum commit 如何降低資料遺失風險
+  - 理解金融系統為什麼核心交易路徑偏向高一致性，必要時 fail closed
+  - 理解交易流程：Order Entry → Pre-Trade Risk → Journal/Event Log → Matching → Ledger / Balance / Position → Reconciliation
+  - 理解監控不只看 heartbeat，還要看 replication lag、event sequence、ledger consistency
+  - 理解交易系統如何拆成：
+    - 核心同步路徑：風控、撮合、核心狀態、journal、安全副本 ACK
+    - 下游 async 路徑：order history、balance views、reporting、analytics、cache、notifications
+  - 理解為什麼下游 async 同步不一定阻塞寫入，但若 backlog / lag 失控仍會影響體驗，需靠 replay、reconciliation、降級控制
+  - 新增筆記：
+    - `records/day-37/failover-data-loss.md`
+    - `records/day-37/financial-trading-architecture.md`
+    - `records/day-37/financial-monitoring-code.md`
+    - `records/day-37/financial-systems-summary.md`
+    - `records/day-37/1u3ru4.md`
 
 ### Day 30（2026-04-23）
 - 系統設計：Redis 實戰應用深化（6 個主題）
@@ -233,6 +263,7 @@ Week 1 只有 3 天工作天，主力放在學習打底。
 | Blockchain.com | Frontend Engineer (React) | $89K–$109K | ⭐⭐⭐⭐ | 觀察中 |
 | Tether | Developer Relations P2P (100% remote) | $126K–$138K | ⭐⭐⭐⭐⭐ | 觀察中 |
 | Tether | Developer Relations AI / QVAC (100% remote) | $115K–$117K | ⭐⭐⭐⭐ | 觀察中 |
+| Tether | Senior Frontend Developer (100% Remote Worldwide) | 未標示 | ⭐⭐⭐ | 已拒絕 |
 | DuckDuckGo | Senior Frontend Engineer, React/TypeScript | $178,500 | ⭐⭐⭐⭐ | 觀察中（確認台灣是否接受）|
 | Phantom | Software Engineer, Frontend/Full Stack | $200K–$250K | ⭐⭐⭐ | 觀察中（⚠️ US/EU 時區限制）|
 | Kraken | Frontend Engineer | $96K–$277K | ⭐⭐⭐⭐ | 觀察中（直接查 careers 頁）|
