@@ -111,6 +111,19 @@ Week 1 只有 3 天工作天，主力放在學習打底。
 
 ## 已完成
 
+### Day 44（2026-05-14）
+- 前端面試筆記：高頻即時資料怎麼設計
+  - 整理重點：WebSocket 不等於每筆資料都直接更新 UI
+  - 核心框架：控制更新頻率、控制狀態範圍、控制渲染成本、控制錯誤恢復
+  - 技術拆解：buffer / batch flush、Zustand live state、React Query polling、virtualization、reconnect / exponential backoff / fallback polling
+  - 新增筆記：
+    - `records/day-44/frontend-interview-realtime-data.md`
+- 前端面試筆記：如何優化首次載入時間（FCP）
+  - 核心框架：縮短 critical rendering path，讓首屏更早出現真正內容
+  - 技術拆解：bundle splitting、lazy load、critical CSS、避免首屏卡在 API、字體 / 圖片 / 第三方 script 優先級調整、SSR / streaming、量測流程
+  - 新增筆記：
+    - `records/day-44/frontend-interview-fcp.md`
+
 ### Day 39（2026-05-07）
 - 求職：整理聚合站 → 官方 ATS 驗證流程
   - 新增 lead 清單：`job-search/leads-2026-05-07.tsv`
