@@ -1,23 +1,21 @@
-# 求職紀錄
+# 求職結果紀錄
 
-更新：2026-05-04
+更新：2026-05-19
 
-這個資料夾專門記錄求職策略、每週規劃、投遞回顧與後續調整。
+這個資料夾現在只放 **找工作結果與驗證資料**，不再承擔計劃與策略。
 
-## 目的
+## 原則
 
-- 集中管理求職方向，不和學習筆記混在一起
-- 記錄每週策略與實際回饋
-- 持續迭代履歷、投遞方式、LinkedIn、coffee chat
+- `job-search/` 只記錄求職結果
+- 每個日期資料夾都有一個 `README.md` 當主索引
+- `tsv -> checklist -> opportunities` 是固定三層
 
-## 檔案
+## 日期資料夾
 
-- `application-strategy.md`：投遞策略與判斷標準
-- `week-2026-05-04.md`：本週規劃（學習、LinkedIn、coffee chat）
+- [2026-05-07/README.md](/Users/linwgpeter/dev/learning/learning-records/job-search/2026-05-07/README.md)
+- [2026-05-19/README.md](/Users/linwgpeter/dev/learning/learning-records/job-search/2026-05-19/README.md)
 
-## 目前共識
+## 策略與計劃的新位置
 
-- 方向：Frontend 為主，Product Engineer / Fullstack 為輔
-- 策略：不是純海投，也不是純精投，而是半客製化的大量投遞
-- 問題：目前投遞幾乎沒有回覆，優先檢查履歷定位、投遞池品質、投遞方式
-- 這週重點：先修轉換率，再擴大量
+- 投遞策略：`plans/strategy/application-strategy.md`
+- 每週規劃：`plans/weekly/`
