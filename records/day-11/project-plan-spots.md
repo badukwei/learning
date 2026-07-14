@@ -120,8 +120,8 @@ src/
 
 ---
 
-## 求職價值
+## 學習價值
 
 - 展示 fullstack 能力（Next.js + Supabase）
-- 有真實需求 + 產品感（quirky 定位好記）
-- 適合放進履歷作為 side project
+- 練習資料建模、CRUD、部署與 RWD
+- 有真實需求 + 產品感，適合整理成產品開發筆記

@@ -21,8 +21,8 @@
 
 ## Day Index
 
-- `day-1` ~ `day-7`：Claude Code / 求職早期探索
-- `day-11`：side project 規劃
+- `day-1` ~ `day-5`：Claude Code / 工具使用早期探索
+- `day-11`：side project 技術規劃
 - `day-16`：系統設計基礎（DNS / LB / microservices）
 - `day-24` ~ `day-30`：系統設計深化（session、LB、storage、Redis、cache）
 - `day-35`：部署筆記

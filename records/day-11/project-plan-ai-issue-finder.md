@@ -52,9 +52,9 @@
 
 ---
 
-## 求職價值
+## 學習價值
 
 - 展示 AI 整合能力（Claude API / Anthropic SDK）
-- 是 developer tool，符合目標公司類型（dev tools、AI 產品）
-- 解決真實問題，面試時 story 好說
+- 是 developer tool，可練習 GitHub API、LLM 評估與 CLI 產品設計
+- 解決真實問題，適合整理成公開技術筆記
 - 對自己馬上有用（找 OSS issue 用）

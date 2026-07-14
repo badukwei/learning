@@ -4,13 +4,13 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Purpose
 
-個人轉職學習記錄 repo。搭配 `/career-coach` skill 使用。
+個人技術學習紀錄 repo。這裡只放 learning，不放求職資料。
 
 ## Structure
 
-- `day-N/` — 每天的學習筆記
-- `PROGRESS.md` — 求職進度與任務追蹤
+- `records/day-N/` — 每天的學習筆記
+- `PROGRESS.md` — 學習進度與索引
 
-## career-coach 使用規則
+## 使用規則
 
-規劃進度、指派任務時，只需讀取 `PROGRESS.md`，不需要讀 `day-N/` 的內容。
+學習進度、技術筆記、每日學習紀錄可以更新這個 repo。
